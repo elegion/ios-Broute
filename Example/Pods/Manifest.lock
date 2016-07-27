@@ -1,0 +1,16 @@
+PODS:
+  - Broute (0.0.1)
+
+DEPENDENCIES:
+  - Broute (from `../`)
+
+EXTERNAL SOURCES:
+  Broute:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Broute: de654a97cbdde6bd6d675ec86044b3fecb40f920
+
+PODFILE CHECKSUM: 3fed995c8772aecf611ac93144550539bf5c1f87
+
+COCOAPODS: 1.0.0

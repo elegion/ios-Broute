@@ -1,0 +1,6 @@
+framework module Broute {
+  umbrella header "Broute-umbrella.h"
+
+  export *
+  module * { export * }
+}

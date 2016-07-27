@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Ij3-l0-S8e">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Long tap on map-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Example" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="7vz-Ap-OMn">
+                                <rect key="frame" x="0.0" y="64" width="320" height="416"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="yEX-bQ-XH6" appends="YES" id="wCb-Sb-MlO"/>
+                                </connections>
+                            </mapView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="7vz-Ap-OMn" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="OWf-17-Bp2"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="7vz-Ap-OMn" secondAttribute="bottom" id="OdI-us-5eS"/>
+                            <constraint firstAttribute="trailing" secondItem="7vz-Ap-OMn" secondAttribute="trailing" id="Tnt-0q-Cju"/>
+                            <constraint firstItem="7vz-Ap-OMn" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="sT9-Eq-vbV"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Long tap on map" id="Wr2-uy-q4v"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="mapView" destination="7vz-Ap-OMn" id="JIY-bh-ljj"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <pongPressGestureRecognizer allowableMovement="10" minimumPressDuration="0.5" id="yEX-bQ-XH6">
+                    <connections>
+                        <action selector="mapViewLongTapped:" destination="BYZ-38-t0r" id="QKM-qA-iDU"/>
+                    </connections>
+                </pongPressGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="924" y="305"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="aWw-Z3-TDG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ij3-l0-S8e" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="e3X-eJ-1GS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="PKb-j3-X7o"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QFQ-jw-pGe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-259" y="305"/>
+        </scene>
+    </scenes>
+</document>

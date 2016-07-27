@@ -1,0 +1,11 @@
+/* 
+  Localizable.strings
+  Example
+
+  Created by Георгий Касапиди on 27.07.16.
+  Copyright © 2016 ELN. All rights reserved.
+*/
+
+"appleMapsTitle" = "Apple Maps";
+"googleMapsTitle" = "Google Maps";
+"yandexNavigatorTitle" = "Yandex Navigator";
