@@ -15,7 +15,7 @@ pod 'Broute'
 
 ## Usage
 
-See example with `MKMapView` in [ViewController file](https://github.com/elegion/ios-Broute/blob/master/Example/Example/ViewController.swift) in [sample project](https://github.com/elegion/ios-Broute/tree/master/Example)
+See example with `MKMapView` in [ViewController file](https://github.com/elegion/ios-Broute/blob/master/Example/Example/ViewController.swift) in [sample project](https://github.com/elegion/ios-Broute/tree/master/Example).
 
 Keep in mind `LSApplicationQueriesSchemes` array key of plist.
 
