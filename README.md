@@ -15,68 +15,9 @@ pod 'Broute'
 
 ## Usage
 
-MKMapView example
+See example with `MKMapView` in [ViewController file](https://github.com/elegion/ios-Broute/blob/master/Example/Example/ViewController.swift) in [sample project](https://github.com/elegion/ios-Broute/tree/master/Example)
 
-```swift
-import UIKit
-import MapKit
-import Broute
-
-class ViewController: UIViewController, MKMapViewDelegate {
-
-    private let routeBuildingManager = ELNThirdPartyAppsRouteBuildingManager()
-    
-    @IBOutlet weak var mapView: MKMapView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        mapView.delegate = self
-        
-        routeBuildingManager.registerRouteBuilder(ELNAppleMapsRouteBuilder(), appNameLocKey: "appleMapsTitle")
-        routeBuildingManager.registerRouteBuilder(ELNGoogleMapsRouteBuilder(), appNameLocKey: "googleMapsTitle")
-        routeBuildingManager.registerRouteBuilder(ELNYandexNavigatorRouteBuilder(), appNameLocKey: "yandexNavigatorTitle")
-    }
-    
-    func mapView(mapView: MKMapView, didSelectAnnotationView view: MKAnnotationView) {
-        if let annotation = view.annotation {
-            processCoordinate(annotation.coordinate)
-        }
-    }
-    
-    @IBAction func mapViewLongTapped(sender: UILongPressGestureRecognizer) {
-        if sender.state != .Began {
-            return
-        }
-        
-        let coordinate = mapView.convertPoint(sender.locationInView(mapView), toCoordinateFromView: mapView)
-        
-        let annotation = MKPointAnnotation()
-        annotation.coordinate = coordinate
-        mapView.addAnnotation(annotation)
-        
-        processCoordinate(coordinate)
-    }
-    
-    func processCoordinate(coordinate: CLLocationCoordinate2D) {
-        let routeBuildingModels = routeBuildingManager.routeBuildingModelsForCoordinate(coordinate)
-        
-        let alert = UIAlertController(title: nil, message: "\(coordinate.latitude) \(coordinate.longitude)", preferredStyle: .ActionSheet)
-        
-        for routeBuildingModel in routeBuildingModels {
-            alert.addAction(UIAlertAction(title: routeBuildingModel.appName, style: .Default) { _ in
-                routeBuildingModel.openBuildingURL()
-                })
-        }
-        
-        alert.addAction(UIAlertAction(title: "Close", style: .Cancel, handler: nil))
-        
-        presentViewController(alert, animated: true, completion: nil)
-    }
-}
-```
-
-Remember about LSApplicationQueriesSchemes key (array) in plist.
+Keep in mind `LSApplicationQueriesSchemes` array key of plist.
 
 ## Requirements
 
